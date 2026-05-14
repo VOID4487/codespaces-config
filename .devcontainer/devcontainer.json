@@ -1,7 +1,7 @@
 {
   "name": "TSIO Legacy GCC",
 
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-20.04",
+  "image": "ubuntu:22.04",
 
   "runArgs": [
     "--cap-add=SYS_PTRACE",
