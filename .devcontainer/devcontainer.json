@@ -1,0 +1,23 @@
+{
+  "name": "TSIO Legacy Server",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+
+  "remoteUser": "root",
+
+  "postCreateCommand": "apt update && apt install -y build-essential g++ gcc make cmake pkg-config git curl wget unzip gdb python3",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "vadimcn.vscode-lldb"
+      ]
+    }
+  }
+}
