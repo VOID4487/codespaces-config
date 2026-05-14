@@ -1,10 +1,29 @@
 {
+  "name": "TSIO Legacy GCC",
+
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-20.04",
+
   "runArgs": [
     "--cap-add=SYS_PTRACE",
     "--security-opt=seccomp=unconfined"
   ],
+
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+
+  "remoteUser": "root",
+
+  "postCreateCommand": "apt update && apt install -y build-essential gcc g++ make cmake git curl wget unzip gdb pkg-config python3",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "vadimcn.vscode-lldb"
+      ]
+    }
   }
 }
